@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col m4"></div>
+    <div class="col m4">
+        <img class="materialboxed center-align" width="500" src="<%= asset_path 'moomin.png'%>">
+        <a href="/home/fake" class="waves-effect waves-light btn">fake api</a>
+        <a href="/home/bithumb" class="waves-effect waves-light btn">bithumb api</a>
+        <a href="/home/place" class="waves-effect waves-light btn">google place api</a>
+    </div>
+    <div class="col m4"></div>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+</script>

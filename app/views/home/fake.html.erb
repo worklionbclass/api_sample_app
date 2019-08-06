@@ -1,0 +1,34 @@
+<div class="row" style="padding-top: 10px;">
+    <div class="col m4"></div>
+    <div class="col m4">
+        <a href="/home/fake?obj=posts" class="waves-effect waves-light btn-large">posts</a>
+        <a href="/home/fake?obj=todos" class="waves-effect waves-light btn-large">todos</a>
+        <a href="/home/fake?obj=photos" class="waves-effect waves-light btn-large">photos</a>
+    </div>
+    <div class="col m4"></div>
+</div>
+
+<div class="row">
+    <ul class="collapsible">
+        <% @objects.each do |object| %>
+            <li>
+              <div class="collapsible-header">
+                  <i class="material-icons green">bookmark</i>
+                  <%= object["title"] %>
+              </div>
+              <div class="collapsible-body">
+                  body : <%= object["body"] %> <hr>
+                  completed : <%= object["completed"] %> <hr>
+                  url : <%= object["url"] %> <hr>
+              </div>
+            </li>
+        <% end if @object.present? %>
+    </ul>
+</div>
+
+  
+<script>
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    });
+</script>

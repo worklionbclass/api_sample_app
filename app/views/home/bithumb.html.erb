@@ -1,0 +1,31 @@
+<table class="striped">
+    <thead>
+      <tr>
+          <th>#</th>
+          <th>시가 (최근 24시간)</th>
+          <th>종가 (최근 24시간)</th>
+          <th>저가 (최근 24시간)</th>
+          <th>고가 (최근 24시간)</th>
+          <th>평균가 (최근 24시간)</th>
+          <th>거래량 (최근 24시간)</th>
+          <th>최고 구매가</th>
+          <th>최저 판매가</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% @coins.each do |coin| %>
+            <tr>
+                <td><%= coin.first %></td>
+                <td><%= number_with_delimiter coin.second["opening_price"] %></td>
+                <td><%= number_with_delimiter coin.second["closing_price"] %></td>
+                <td><%= number_with_delimiter coin.second["min_price"] %></td>
+                <td><%= number_with_delimiter coin.second["max_price"] %></td>
+                <td><%= number_with_delimiter coin.second["average_price"] %></td>
+                <td><%= number_with_delimiter coin.second["units_traded"] %></td>
+                <td><%= number_with_delimiter coin.second["buy_price"] %></td>
+                <td><%= number_with_delimiter coin.second["sell_price"] %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
